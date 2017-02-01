@@ -2,6 +2,7 @@
 
 include_once '../app/Config.php';
 include_once '../app/Model.php';
+include_once '../app/Marca.php';
 
 //$conexion = new PDO('mysql:host='.Config::$bdhostname.';dbname='.Config::$bdnamebd.';charset=utf8',Config::$bduser,Config::$bspass);
 
@@ -34,14 +35,16 @@ $kk=$modelo->dameMarcas();
 
 //print_r($kk);
 
-foreach($kk as $fila) {
+/*foreach($kk as $fila) {
 	//echo $fila['id']." ";
 	//echo $fila['marca']."<br/>";
 	echo "<br/>";
 	echo $fila['id:Marca:private'];
 	echo "<br/>";
 	
-}
+}*/
+$marca = new Marca ( $fila->id, $fila->marca );
+
 
 /*$parametros=array($modelo->dameMarcas());
 foreach ($parametros as $fila) {

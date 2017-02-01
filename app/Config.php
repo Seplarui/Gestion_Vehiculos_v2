@@ -1,12 +1,9 @@
 <?php
 
 class Config {
-	
 	static public $bdhostname="localhost";
-	static public $bdnamebd="seplarui";
-	static public $bduser="alumno";
-	static public $bdpass="alumno";
-	static public $file_css="estilo.css";
-	
-	
+	static public $bdnombre="seplarui";
+	static public $bdusuario="alumno";
+	static public $bdclave="alumno";
+	static public $css="estilo.css";
 }
