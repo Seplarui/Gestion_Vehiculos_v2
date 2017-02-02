@@ -1,5 +1,5 @@
 <?php
-include_once "Marca.php";
+include_once "../../app/Marca.php";
 class Model {
 	public function __construct($dbname, $dbusuario, $dbclave, $dbhost) {
 		$this->conexion = NULL;

@@ -1,8 +1,8 @@
 <?php
 
-include_once '../app/Config.php';
-include_once '../app/Model.php';
-include_once '../app/Marca.php';
+include_once '../old_2/app/Config.php';
+include_once '../old_2/app/Model.php';
+include_once '../old_2/app/Marca.php';
 
 //$conexion = new PDO('mysql:host='.Config::$bdhostname.';dbname='.Config::$bdnamebd.';charset=utf8',Config::$bduser,Config::$bspass);
 
