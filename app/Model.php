@@ -41,16 +41,21 @@ class Model {
 	
 	public function buscarMarcaPorMarca($marca) {
 		$marca=htmlspecialchars($marca);
-		$consulta= "select * from marca where marca like".$marca;
+		$consulta= "select * from marca where marca like '".$marca."'";
 		$resultado=$this->conexion->query($consulta);
 		$marcas=array();
 		$cont=0;
 		$filas=$resultado->fetchAll(PDO::FETCH_OBJ);
+		echo "<pre>";
+		print_r($filas);
+		echo "</pre>";
 		foreach($filas as $fila) {
 			$marca= new Marca($fila->id,$fila->marca,$fila->modelo,$fila->motor);
 			$marcas[$cont]=$marca;
 			$cont++;
 		}
+		//print_r($consulta);
+		print_r($marcas);
 		$conexion=false;
 		return $marcas;
 	}

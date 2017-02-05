@@ -1,5 +1,9 @@
 <?php ob_start()?>
 
+<head>
+<meta charset="utf8"/>
+</head>
+
 <h1><?php echo $parametros['marca']?></h1>
 <table>
 

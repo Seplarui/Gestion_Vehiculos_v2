@@ -4,7 +4,7 @@
 
 <head>
 <title>Gestión de Vehículos</title>
-<meta charset="utf8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css"
 	href="<?php echo 'css/'.Config::$css?>" />
 </head>

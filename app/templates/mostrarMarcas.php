@@ -1,5 +1,7 @@
 <?php ob_start()?>
-
+<head>
+<meta charset="utf8"/>
+</head>
 <table>
 	<tr>
 		<th>Marca</th>
