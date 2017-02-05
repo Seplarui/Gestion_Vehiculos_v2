@@ -9,10 +9,10 @@
 
 <?php foreach ($parametros['marcas'] as $marca): ?>
 	<tr>
-		<td><a href="index.php?ctl=ver&id=<?php echo $marca['id']?>">
-		<?php echo $marca['marca']?></a></td>
-		<td><?php echo $marca['modelo']?></td>
-		<td><?php echo $marca['motor']?></td>
+		<td><a href="index.php?ctl=ver&id=<?php echo $marca->getId();  ?>">
+		<?php echo $marca->getMarca();?></a></td>
+		<td><?php echo $marca->getModelo()?></td>
+		<td><?php echo $marca->getMotor()?></td>
 	</tr>
 	
 	<?php endforeach;?>

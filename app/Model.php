@@ -16,7 +16,7 @@ class Model {
 	// LISTADO MARCAS
 	public function dameMarcas() {
 		$consulta = "select * from marca";
-		$resultado = $this->conexion > query ( $consulta );
+		$resultado = $this->conexion -> query ( $consulta );
 		$marcas = array ();
 		$cont = 0;
 		
@@ -28,7 +28,12 @@ class Model {
 			$cont++;
 		}
 		
-		$conexion=NULL;
+		/*echo "<pre>";
+		print_r($marcas);
+		echo "<br/>";
+		print_r($marca);
+		echo "</pre>";*/
+		$conexion=false;
 		return $marcas;
 	}
 	
@@ -66,12 +71,13 @@ class Model {
 	
 	public function insertarMarca($marca,$modelo,$motor) {
 		try {
-			$consulta="insert into marca(marca,modelo,motor) values ($marca,$modelo,$motor)";
+			$consulta="insert into marca(marca,modelo,motor) values ('".$marca."','".$modelo."','".$motor."')";
 			
 			$resultado=$this->conexion->prepare($consulta);
 			
 			if(!$resultado) {
 				echo "Error al insertar.";
+				print_r($this->conexion->errorInfo());
 			}
 			
 			$cont=$resultado->execute(array(":marca"=>$marca,
@@ -79,6 +85,8 @@ class Model {
 					":motor"=>$motor,
 					
 			));
+			print_r($consulta);
+			print_r($resultado);
 		} catch (PDOException $ex) {
 			echo "Error: ".$ex->getMessage();
 			return false;
@@ -93,6 +101,7 @@ class Model {
 		
 		public function validarDatos($marca,$modelo,$motor) {
 			$valido= is_string($marca) & is_string($modelo) & is_string($motor);
+			return $valido;
 		}
 	}
 	
